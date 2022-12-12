@@ -1,44 +1,5 @@
-<?php include 'admin/config/_config.php';
-include "layouts/header.php";
-?>
-
-    <main id="main">
-
-        <!-- ======= Our Services Section ======= -->
-        <section id="services" class="services sections-bg">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-header">
-                    <h2>Berita Tentang Bela Negara Untuk Bangkitkan Semangat Indonesia</h2>
-                </div>
-
-                <div class="row gy-4" data-aos="fade-up" data-aos-delay="100">
-                    <?php
-                    $id_kategori = $_GET['id_kategori'];
-                    $data = mysqli_query($con, "SELECT * FROM artikel where id_kategori=$id_kategori");
-                    foreach ($data as $row) : ?>
-                        <div class="col-lg-4 col-md-6">
-                            <div class="service-item  position-relative">
-                                <p class="overflow-hidden"><img src="<?= "admin/img_artikel/" . $row['gambar'] ?>" width="350"
-                                         height="200"></p>
-                                <h3 class="mt-4"><?= $row['judul'] ?></h3>
-                                <p><?= $row['tanggal'] ?></p>
-                                <p><?= substr($row['artikel'], 0, 50) . '...' ?></p>
-                                <a href="detail_artikel.php?id_artikel=<?= $row['id_artikel'] ?>" class="readmore stretched-link">Read more <i class="bi bi-arrow-right"></i></a>
-                            </div>
-                        </div><!-- End Service Item -->
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </section><!-- End Our Services Section -->
-
-
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
         <div class="container">
             <div class="row gy-4">
                 <div class="col-lg-5 col-md-12 footer-info">
@@ -90,4 +51,25 @@ include "layouts/header.php";
             </div>
         </div>
 
-<?php include "layouts/footer.php"; ?>
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
+
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
